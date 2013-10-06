@@ -286,9 +286,10 @@ MCSessionDelegate>
             // all submissions received
             NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
             
+            NSLog(@"payments = %@", payments);
+            
             
             int i;
-            
             
             
           //  VenmoClient *venmoClient = [VenmoClient clientWithAppId:@"1432" secret:@"ZY3yF5PJzXp4bDLXhAWAeMJF7UneAvJw"];
@@ -301,6 +302,7 @@ MCSessionDelegate>
                 NSString *uname = [[[_session connectedPeers]objectAtIndex:i]displayName];
                 //uname = [uname stringByAppendingString:@"::"];
                 
+                url = [NSURL URLWithString:[[url absoluteString]substringFromIndex:30]];
                 
                 VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
                 venmoTransaction.type = VenmoTransactionTypePay;
