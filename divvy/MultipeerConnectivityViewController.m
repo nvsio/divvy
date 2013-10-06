@@ -3,12 +3,11 @@
 //  divvy
 //
 //  Created by Andrew Frederick and adapted by Neel Mouleeswaran on 8/05/13.
-//  Copyright (c) 2013 Nikhil Srinivasan. All rights reserved.
+//  Copyright (c) 2013 Nikhil Srinivasan and Neel Mouleeswaran. All rights reserved.
 //
 
 #import "MultipeerConnectivityViewController.h"
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
-#import <VenmoAppSwitch/Venmo.h>
 
 
 
@@ -59,14 +58,13 @@ MCSessionDelegate>
     [tableView setHidden:YES];
     [waiting_label setHidden:YES];
     isTip = FALSE;
-    payments = [[NSMutableDictionary alloc]init];
+    payments = [[NSMutableArray alloc]init];
     
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Name" message:@"Enter your name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alertView show];
     
- 
     UIAlertView *alertView2 = [[UIAlertView alloc] initWithTitle:@"Access token" message:@"Enter your AT:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     alertView2.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alertView2 show];
@@ -111,17 +109,19 @@ MCSessionDelegate>
 - (IBAction)sendMessageButtonPressed:(id)sender {
     
     
-    NSString *message = _messageTextField.text;
-   // NSString *input = _messageTextField.text;
+    
+    NSString *input = _messageTextField.text;
     
     //https://api.venmo.com/payments&access_token=TOKEN&user_id=NAME&note=N/A&amount=MESSAGE
     
-    /*NSString *message = [@"https://api.venmo.com/payments?access_token=" stringByAppendingString:@"TOKEN"];
+    // NSString *message = _messageTextField.text;
+    
+    NSString *message = [@"https://api.venmo.com/payments?access_token=" stringByAppendingString:@"6adrUbMfQNqq2LQb5dc5csNpHF23EyZF"];
     message = [message stringByAppendingString:@"&user_id="];
     message = [message stringByAppendingString:name];
-    message = [message stringByAppendingString:@"&note=via-divvy&amount="];
+    message = [message stringByAppendingString:@"&note=via-divvy&amount=-"];
     message = [message stringByAppendingString:input];
-     */
+    
     
     
     
@@ -222,8 +222,6 @@ MCSessionDelegate>
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID {
     
-    
-    
     NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
     
     
@@ -235,15 +233,8 @@ MCSessionDelegate>
                                                                             format:&format
                                                                              error:NULL];
     NSString *message = receivedData[kMessageKey];
-    
-    NSString *pmt =[@"" stringByAppendingString:[peerID displayName]];
-    
-    pmt = [pmt stringByAppendingString:@"::"];
-    pmt = [pmt stringByAppendingString:message];
-    
-    [payments setObject:message forKey:[peerID displayName]];
-    
-   NSLog(@"payments = %@", payments);
+    [payments addObject:message];
+    NSLog(@"payments = %@", payments);
     
     
     if ([message length]) {
@@ -273,7 +264,7 @@ MCSessionDelegate>
             
             
             else if(!isPaying && isTip) {
-                UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:[@"Tip is: " stringByAppendingString:message]    message:@"You can dismiss this window now" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:[@"Tip is: " stringByAppendingString:[message substringFromIndex:[message length] - 4]]    message:@"You can dismiss this window now" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [messageAlert show];
                 
                 isTip = FALSE;
@@ -289,57 +280,37 @@ MCSessionDelegate>
         
         submissions_recieved++;
         int num_peers = [[_session connectedPeers]count];
+        NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
         
         if(submissions_recieved >= num_peers) {
             // all submissions received
             NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
             
-            
-            int i;
-            
-            for(i = 0; i < num_peers; i++) {
-                
-                NSLog(@"now payments is %@", payments);
-                
-                NSString *uname = [[[_session connectedPeers]objectAtIndex:i]displayName];
-                //uname = [uname stringByAppendingString:@"::"];
-                
-                VenmoClient *venmoClient = [VenmoClient clientWithAppId:@"1432" secret:@"ZY3yF5PJzXp4bDLXhAWAeMJF7UneAvJw"];
-                
-                VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
-                venmoTransaction.type = VenmoTransactionTypePay;
-                venmoTransaction.amount =  [payments objectForKey:uname];
-                venmoTransaction.note = @"via_divvy";
-                venmoTransaction.toUserHandle = uname;
-                
-                VenmoViewController *venmoViewController = [venmoClient viewControllerWithTransaction:
-                                                            venmoTransaction];
-                if (venmoViewController) {
-                    [self presentModalViewController:venmoViewController animated:YES];
-                }
-                
-            }
+            NSLog(@"payments = %@", payments);
             
             
-            
-            //NSLog(@"payments = %@", payments);
-            
-            /*
             int i;
             
             for(i = 0; i < [payments count]; i++) {
                 NSLog(@"request = %@", [payments objectAtIndex:i]);
-                NSURL *url = [NSURL URLWithString:[[payments objectAtIndex:i]stringByReplacingOccurrencesOfString:@"TOKEN" withString:[peerID displayName]]];
+                // NSURL *url = [NSURL URLWithString:[[payments objectAtIndex:i]stringByReplacingOccurrencesOfString:@"TOKEN" withString:[peerID displayName]]];
+                NSURL *url = [NSURL URLWithString:[payments objectAtIndex:i]];
                 NSLog(@"\nRUNNING: %@\n", url);
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+                
+                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.venmo.com/payments"]];
+                
                 [request setHTTPMethod:@"POST"];
-                [request setHTTPBody:data];
+                
+                url = [NSURL URLWithString:[[url absoluteString]substringFromIndex:30]];
+                
+                NSLog(@"Substring = %@", url);
+                
+                [request setHTTPBody:[NSData dataWithContentsOfURL:url]];
                 NSURLResponse *response;
                 NSError *err;
                 NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
                 NSLog(@"i = %d, responseData: %@", i, responseData);
             }
-             */
             
             UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"All payments received" message:@"Enter individual tip..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
