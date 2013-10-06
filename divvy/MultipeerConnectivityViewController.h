@@ -17,6 +17,7 @@
     NSString *name;
     NSString *access_token;
     NSMutableDictionary *payments;
+    int num_peers;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

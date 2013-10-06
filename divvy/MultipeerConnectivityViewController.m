@@ -60,6 +60,7 @@ MCSessionDelegate>
     [waiting_label setHidden:YES];
     isTip = FALSE;
     payments = [[NSMutableDictionary alloc]init];
+    num_peers = 0;
     
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Name" message:@"Enter your name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
@@ -226,7 +227,7 @@ MCSessionDelegate>
     
     NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
     
-    
+    num_peers = [[_session connectedPeers]count];
     
     
     NSPropertyListFormat format;
@@ -288,7 +289,7 @@ MCSessionDelegate>
         [tableView setHidden:NO];
         
         submissions_recieved++;
-        int num_peers = [[_session connectedPeers]count];
+       // int num_peers = [[_session connectedPeers]count];
         
         if(submissions_recieved >= num_peers) {
             // all submissions received
@@ -297,6 +298,11 @@ MCSessionDelegate>
             
             int i;
             
+            
+            
+          //  VenmoClient *venmoClient = [VenmoClient clientWithAppId:@"1432" secret:@"ZY3yF5PJzXp4bDLXhAWAeMJF7UneAvJw"];
+            
+            /*
             for(i = 0; i < num_peers; i++) {
                 
                 NSLog(@"now payments is %@", payments);
@@ -304,7 +310,6 @@ MCSessionDelegate>
                 NSString *uname = [[[_session connectedPeers]objectAtIndex:i]displayName];
                 //uname = [uname stringByAppendingString:@"::"];
                 
-                VenmoClient *venmoClient = [VenmoClient clientWithAppId:@"1432" secret:@"ZY3yF5PJzXp4bDLXhAWAeMJF7UneAvJw"];
                 
                 VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
                 venmoTransaction.type = VenmoTransactionTypePay;
@@ -319,27 +324,8 @@ MCSessionDelegate>
                 }
                 
             }
+            */
             
-            
-            
-            //NSLog(@"payments = %@", payments);
-            
-            /*
-            int i;
-            
-            for(i = 0; i < [payments count]; i++) {
-                NSLog(@"request = %@", [payments objectAtIndex:i]);
-                NSURL *url = [NSURL URLWithString:[[payments objectAtIndex:i]stringByReplacingOccurrencesOfString:@"TOKEN" withString:[peerID displayName]]];
-                NSLog(@"\nRUNNING: %@\n", url);
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-                [request setHTTPMethod:@"POST"];
-                [request setHTTPBody:data];
-                NSURLResponse *response;
-                NSError *err;
-                NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-                NSLog(@"i = %d, responseData: %@", i, responseData);
-            }
-             */
             
             UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"All payments received" message:@"Enter individual tip..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
