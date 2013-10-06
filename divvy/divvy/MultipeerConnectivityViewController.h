@@ -13,6 +13,10 @@
     NSMutableArray *cells;
     BOOL stillWaiting;
     int submissions_recieved;
+    BOOL isTip;
+    NSString *name;
+    NSString *access_token;
+    NSMutableArray *payments;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

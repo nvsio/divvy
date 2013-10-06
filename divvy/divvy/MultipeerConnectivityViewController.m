@@ -7,15 +7,16 @@
 //
 
 #import "MultipeerConnectivityViewController.h"
-
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
+
+
 
 // Service name must be < 16 characters
 static NSString * const kServiceName = @"multipeer";
 static NSString * const kMessageKey = @"message";
 
 @interface MultipeerConnectivityViewController () <MCBrowserViewControllerDelegate,
-                                                   MCSessionDelegate>
+MCSessionDelegate>
 
 // Required for both Browser and Advertiser roles
 @property (nonatomic, strong) MCPeerID *peerID;
@@ -56,9 +57,17 @@ static NSString * const kMessageKey = @"message";
     _activityView.hidden = YES;
     [tableView setHidden:YES];
     [waiting_label setHidden:YES];
+    isTip = FALSE;
+    payments = [[NSMutableArray alloc]init];
     
     
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Name" message:@"Enter your name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alertView show];
     
+    UIAlertView *alertView2 = [[UIAlertView alloc] initWithTitle:@"Access token" message:@"Enter your AT:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    alertView2.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alertView2 show];
     
 }
 
@@ -66,7 +75,7 @@ static NSString * const kMessageKey = @"message";
     [pay_bill_button setHidden:YES];
     [pay_later_button setHidden:YES];
     isPaying = TRUE;
-    _peerID = [[MCPeerID alloc] initWithDisplayName:@"Browser Name"];
+    _peerID = [[MCPeerID alloc] initWithDisplayName:name];
     _session = [[MCSession alloc] initWithPeer:_peerID];
     _session.delegate = self;
     _browserView = [[MCBrowserViewController alloc] initWithServiceType:kServiceName
@@ -83,7 +92,7 @@ static NSString * const kMessageKey = @"message";
 - (IBAction)launchAdvertiser:(id)sender {
     [pay_bill_button setHidden:YES];
     [pay_later_button setHidden:YES];
-    _peerID = [[MCPeerID alloc] initWithDisplayName:@"Advertiser Name"];
+    _peerID = [[MCPeerID alloc] initWithDisplayName:name];
     _session = [[MCSession alloc] initWithPeer:_peerID];
     _session.delegate = self;
     _advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:kServiceName
@@ -101,7 +110,18 @@ static NSString * const kMessageKey = @"message";
     
     
     
-    NSString *message = _messageTextField.text;
+    NSString *input = _messageTextField.text;
+    
+    //https://api.venmo.com/payments&access_token=TOKEN&user_id=NAME&note=N/A&amount=MESSAGE
+    
+    NSString *message = [@"https://api.venmo.com/payments?access_token=" stringByAppendingString:access_token];
+    message = [message stringByAppendingString:@"&user_id="];
+    message = [message stringByAppendingString:@"NAME"];
+    message = [message stringByAppendingString:@"&note=via-divvy&amount="];
+    message = [message stringByAppendingString:input];
+    
+    NSLog(@"msg = %@", message);
+    
     NSDictionary *dataDict = @{ kMessageKey : message };
     NSData *data = [NSPropertyListSerialization dataWithPropertyList:dataDict
                                                               format:NSPropertyListBinaryFormat_v1_0
@@ -113,11 +133,20 @@ static NSString * const kMessageKey = @"message";
                   withMode:MCSessionSendDataReliable
                      error:&error];
     
-    UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Sent payment" message:@"Wait while tip is calculated..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *messageAlert;
+    
+    if(!isTip) {
+        messageAlert = [[UIAlertView alloc] initWithTitle:@"Sent payment" message:@"Wait while tip is calculated..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        isTip = TRUE;
+    }
+    else if(isTip) {
+        messageAlert = [[UIAlertView alloc] initWithTitle:@"Sent tip update" message:@"You can close this now..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    }
     
     [messageAlert show];
     
     [[self view]endEditing:YES];
+    
     _messageTextField.hidden = YES;
     _sendMessageButton.hidden = YES;
     
@@ -191,10 +220,34 @@ static NSString * const kMessageKey = @"message";
     NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
     
     if(isPaying) {
-        submissions_recieved++;
         
-        if(submissions_recieved >= [[_session connectedPeers]count]) {
+        [tableView setHidden:NO];
+        
+        submissions_recieved++;
+        int num_peers = [[_session connectedPeers]count];
+        
+        if(submissions_recieved >= num_peers) {
             // all submissions received
+            NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
+            
+            NSLog(@"payments = %@", payments);
+            
+            
+            int i;
+            
+            for(i = 0; i < [payments count]; i++) {
+                NSLog(@"request = %@", [payments objectAtIndex:i]);
+                NSURL *url = [NSURL URLWithString:[[payments objectAtIndex:i]stringByReplacingOccurrencesOfString:@"NAME" withString:[peerID displayName]]];
+                NSLog(@"\nRUNNING: %@\n", url);
+                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+                [request setHTTPMethod:@"POST"];
+                [request setHTTPBody:data];
+                NSURLResponse *response;
+                NSError *err;
+                NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+                NSLog(@"i = %d, responseData: %@", i, responseData);
+            }
+            
             UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"All payments received" message:@"Enter individual tip..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
             [messageAlert show];
@@ -205,12 +258,15 @@ static NSString * const kMessageKey = @"message";
             [waiting_label setHidden:YES];
             _messageTextField.hidden=FALSE;
             _sendMessageButton.hidden=FALSE;
-            
-            
+            isTip = TRUE;
             
         }
         
+        submissions_recieved = 0;
+        
     }
+    
+    
     
     NSPropertyListFormat format;
     NSDictionary *receivedData = [NSPropertyListSerialization propertyListWithData:data
@@ -218,8 +274,13 @@ static NSString * const kMessageKey = @"message";
                                                                             format:&format
                                                                              error:NULL];
     NSString *message = receivedData[kMessageKey];
+    [payments addObject:message];
+    NSLog(@"payments = %@", payments);
+    
+    
     if ([message length]) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             
             if(isPaying) {
                 
@@ -233,14 +294,23 @@ static NSString * const kMessageKey = @"message";
                 [[self tableView]reloadData];
                 
                 /*
-            UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:[@"Received payment from " stringByAppendingString:[peerID displayName]]     message:message
-                                delegate:self
-                                cancelButtonTitle:@"OK"
-                                otherButtonTitles:nil];
-            [messageAlert show];
+                 UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:[@"Received payment from " stringByAppendingString:[peerID displayName]]     message:message
+                 delegate:self
+                 cancelButtonTitle:@"OK"
+                 otherButtonTitles:nil];
+                 [messageAlert show];
                  */
                 
             }
+            
+            
+            else if(!isPaying && isTip) {
+                UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:[@"Tip is: " stringByAppendingString:message]    message:@"You can dismiss this window now" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [messageAlert show];
+                
+                isTip = FALSE;
+            }
+            
         });
     }
 }
@@ -277,7 +347,13 @@ static NSString * const kMessageKey = @"message";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     // If you're serving data from an array, return the length of the array:
-    return [[_session connectedPeers] count];
+    
+    if([[_session connectedPeers] count] == 0) {
+        return 1;
+    }
+    else {
+        return [[_session connectedPeers] count];
+    }
 }
 
 // Customize the appearance of table view cells.
@@ -290,6 +366,17 @@ static NSString * const kMessageKey = @"message";
     else {
         return [cells objectAtIndex:[indexPath row]];
     }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if([alertView.title isEqualToString:@"Name"]) {
+        name = [[alertView textFieldAtIndex:0]text];
+    }
+    else if([alertView.title isEqualToString:@"Access token"]) {
+        access_token = [[alertView textFieldAtIndex:0]text];
+    }
+    
 }
 
 @end

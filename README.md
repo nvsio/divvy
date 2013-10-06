@@ -9,5 +9,5 @@ Based on the new [iOS Multipeer Connectivity Framework](https://developer.apple.
 **Dependencies**  
 [Venmo oAuth API](https://beta-developer.venmo.com/oauth)
 [Venmo App Switch SDK for iOS](https://github.com/venmo/app-switch-ios-framework)
-
+[ChatHeads](https://github.com/brutella/chatheads)
 
