@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3103F82D180119BC004932F3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3103F82A180119BC004932F3 /* .gitignore */; };
+		3103F82E180119BC004932F3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3103F82B180119BC004932F3 /* README.md */; };
+		3103F82F180119BC004932F3 /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3103F82C180119BC004932F3 /* VenmoAppSwitch.framework */; };
 		3116A04E1801191C00308F34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A04D1801191C00308F34 /* Foundation.framework */; };
 		3116A0501801191C00308F34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A04F1801191C00308F34 /* CoreGraphics.framework */; };
 		3116A0521801191C00308F34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A0511801191C00308F34 /* UIKit.framework */; };
@@ -32,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3103F82A180119BC004932F3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3103F82B180119BC004932F3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		3103F82C180119BC004932F3 /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VenmoAppSwitch.framework; sourceTree = "<group>"; };
 		3116A04A1801191C00308F34 /* divvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = divvy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3116A04D1801191C00308F34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3116A04F1801191C00308F34 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3103F82F180119BC004932F3 /* VenmoAppSwitch.framework in Frameworks */,
 				3116A0501801191C00308F34 /* CoreGraphics.framework in Frameworks */,
 				3116A0521801191C00308F34 /* UIKit.framework in Frameworks */,
 				3116A04E1801191C00308F34 /* Foundation.framework in Frameworks */,
@@ -74,9 +81,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3103F829180119BC004932F3 /* app-switch-ios-framework-master */ = {
+			isa = PBXGroup;
+			children = (
+				3103F82A180119BC004932F3 /* .gitignore */,
+				3103F82B180119BC004932F3 /* README.md */,
+				3103F82C180119BC004932F3 /* VenmoAppSwitch.framework */,
+			);
+			path = "app-switch-ios-framework-master";
+			sourceTree = "<group>";
+		};
 		3116A0411801191C00308F34 = {
 			isa = PBXGroup;
 			children = (
+				3103F829180119BC004932F3 /* app-switch-ios-framework-master */,
 				3116A0531801191C00308F34 /* divvy */,
 				3116A06C1801191C00308F34 /* divvyTests */,
 				3116A04C1801191C00308F34 /* Frameworks */,
@@ -224,6 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3116A0581801191C00308F34 /* InfoPlist.strings in Resources */,
+				3103F82D180119BC004932F3 /* .gitignore in Resources */,
+				3103F82E180119BC004932F3 /* README.md in Resources */,
 				3116A0601801191C00308F34 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +385,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nikhil/Dropbox/projects/divvy-iOS/app-switch-ios-framework-master",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "divvy/divvy-Prefix.pch";
 				INFOPLIST_FILE = "divvy/divvy-Info.plist";
@@ -381,6 +405,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nikhil/Dropbox/projects/divvy-iOS/app-switch-ios-framework-master",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "divvy/divvy-Prefix.pch";
 				INFOPLIST_FILE = "divvy/divvy-Info.plist";
@@ -451,6 +479,7 @@
 				3116A0781801191C00308F34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3116A0791801191C00308F34 /* Build configuration list for PBXNativeTarget "divvyTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +488,7 @@
 				3116A07B1801191C00308F34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
