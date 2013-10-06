@@ -19,10 +19,11 @@
 		3165E5E1180154E6003FC639 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165E5C3180154E6003FC639 /* UIKit.framework */; };
 		3165E5E9180154E6003FC639 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3165E5E7180154E6003FC639 /* InfoPlist.strings */; };
 		3165E5EB180154E6003FC639 /* divvyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165E5EA180154E6003FC639 /* divvyTests.m */; };
-		3165E5F518015531003FC639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3165E5F418015531003FC639 /* Main.storyboard */; };
+		3165E5F518015531003FC639 /* default-iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3165E5F418015531003FC639 /* default-iphone.storyboard */; };
 		3165E5FA18015597003FC639 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165E5F718015597003FC639 /* ViewController.m */; };
 		3165E5FB18015597003FC639 /* MultipeerConnectivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165E5F918015597003FC639 /* MultipeerConnectivityViewController.m */; };
 		3165E5FD180155D2003FC639 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165E5FC180155D2003FC639 /* MultipeerConnectivity.framework */; };
+		3165E5FF18015896003FC639 /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165E5FE18015896003FC639 /* VenmoAppSwitch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,12 +53,13 @@
 		3165E5E6180154E6003FC639 /* divvyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "divvyTests-Info.plist"; sourceTree = "<group>"; };
 		3165E5E8180154E6003FC639 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3165E5EA180154E6003FC639 /* divvyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = divvyTests.m; sourceTree = "<group>"; };
-		3165E5F418015531003FC639 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3165E5F418015531003FC639 /* default-iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "default-iphone.storyboard"; sourceTree = "<group>"; };
 		3165E5F618015597003FC639 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3165E5F718015597003FC639 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3165E5F818015597003FC639 /* MultipeerConnectivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerConnectivityViewController.h; sourceTree = "<group>"; };
 		3165E5F918015597003FC639 /* MultipeerConnectivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerConnectivityViewController.m; sourceTree = "<group>"; };
 		3165E5FC180155D2003FC639 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		3165E5FE18015896003FC639 /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VenmoAppSwitch.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3165E5FD180155D2003FC639 /* MultipeerConnectivity.framework in Frameworks */,
+				3165E5FF18015896003FC639 /* VenmoAppSwitch.framework in Frameworks */,
 				3165E5C2180154E6003FC639 /* CoreGraphics.framework in Frameworks */,
 				3165E5C4180154E6003FC639 /* UIKit.framework in Frameworks */,
 				3165E5C0180154E6003FC639 /* Foundation.framework in Frameworks */,
@@ -107,6 +110,7 @@
 		3165E5BE180154E6003FC639 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3165E5FE18015896003FC639 /* VenmoAppSwitch.framework */,
 				3165E5FC180155D2003FC639 /* MultipeerConnectivity.framework */,
 				3165E5BF180154E6003FC639 /* Foundation.framework */,
 				3165E5C1180154E6003FC639 /* CoreGraphics.framework */,
@@ -125,7 +129,7 @@
 				3165E5F718015597003FC639 /* ViewController.m */,
 				3165E5F818015597003FC639 /* MultipeerConnectivityViewController.h */,
 				3165E5F918015597003FC639 /* MultipeerConnectivityViewController.m */,
-				3165E5F418015531003FC639 /* Main.storyboard */,
+				3165E5F418015531003FC639 /* default-iphone.storyboard */,
 				3165E5D7180154E6003FC639 /* Images.xcassets */,
 				3165E5C6180154E6003FC639 /* Supporting Files */,
 			);
@@ -237,7 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3165E5F518015531003FC639 /* Main.storyboard in Resources */,
+				3165E5F518015531003FC639 /* default-iphone.storyboard in Resources */,
 				3165E5D8180154E6003FC639 /* Images.xcassets in Resources */,
 				3165E5CA180154E6003FC639 /* InfoPlist.strings in Resources */,
 			);
@@ -380,6 +384,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nikhil/Dropbox/projects/divvy-iOS/divvy",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "divvy/divvy-Prefix.pch";
 				INFOPLIST_FILE = "divvy/divvy-Info.plist";
@@ -393,6 +401,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nikhil/Dropbox/projects/divvy-iOS/divvy",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "divvy/divvy-Prefix.pch";
 				INFOPLIST_FILE = "divvy/divvy-Info.plist";

@@ -1,9 +1,9 @@
 //
 //  ViewController.m
-//  Venmo-Bill-Split
+//  divvy
 //
 //  Created by Neel Mouleeswaran on 10/5/13.
-//  Copyright (c) 2013 TestiOS7. All rights reserved.
+//  Copyright (c) 2013 divvy. All rights reserved.
 //
 
 #import "ViewController.h"
