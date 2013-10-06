@@ -8,6 +8,7 @@
 
 #import "MultipeerConnectivityViewController.h"
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
+#import <VenmoAppSwitch/Venmo.h>
 
 
 
@@ -58,13 +59,14 @@ MCSessionDelegate>
     [tableView setHidden:YES];
     [waiting_label setHidden:YES];
     isTip = FALSE;
-    payments = [[NSMutableArray alloc]init];
+    payments = [[NSMutableDictionary alloc]init];
     
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Name" message:@"Enter your name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alertView show];
     
+ 
     UIAlertView *alertView2 = [[UIAlertView alloc] initWithTitle:@"Access token" message:@"Enter your AT:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     alertView2.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alertView2 show];
@@ -109,16 +111,19 @@ MCSessionDelegate>
 - (IBAction)sendMessageButtonPressed:(id)sender {
     
     
-    
-    NSString *input = _messageTextField.text;
+    NSString *message = _messageTextField.text;
+   // NSString *input = _messageTextField.text;
     
     //https://api.venmo.com/payments&access_token=TOKEN&user_id=NAME&note=N/A&amount=MESSAGE
     
-    NSString *message = [@"https://api.venmo.com/payments?access_token=" stringByAppendingString:@"TOKEN"];
+    /*NSString *message = [@"https://api.venmo.com/payments?access_token=" stringByAppendingString:@"TOKEN"];
     message = [message stringByAppendingString:@"&user_id="];
     message = [message stringByAppendingString:name];
     message = [message stringByAppendingString:@"&note=via-divvy&amount="];
     message = [message stringByAppendingString:input];
+     */
+    
+    
     
     NSLog(@"msg = %@", message);
     
@@ -217,6 +222,8 @@ MCSessionDelegate>
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID {
     
+    
+    
     NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
     
     
@@ -228,8 +235,15 @@ MCSessionDelegate>
                                                                             format:&format
                                                                              error:NULL];
     NSString *message = receivedData[kMessageKey];
-    [payments addObject:message];
-    NSLog(@"payments = %@", payments);
+    
+    NSString *pmt =[@"" stringByAppendingString:[peerID displayName]];
+    
+    pmt = [pmt stringByAppendingString:@"::"];
+    pmt = [pmt stringByAppendingString:message];
+    
+    [payments setObject:message forKey:[peerID displayName]];
+    
+   NSLog(@"payments = %@", payments);
     
     
     if ([message length]) {
@@ -280,9 +294,37 @@ MCSessionDelegate>
             // all submissions received
             NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
             
-            NSLog(@"payments = %@", payments);
+            
+            int i;
+            
+            for(i = 0; i < num_peers; i++) {
+                
+                NSLog(@"now payments is %@", payments);
+                
+                NSString *uname = [[[_session connectedPeers]objectAtIndex:i]displayName];
+                uname = [uname stringByAppendingString:@"::"];
+                
+                VenmoClient *venmoClient = [VenmoClient clientWithAppId:@"1432" secret:@"ZY3yF5PJzXp4bDLXhAWAeMJF7UneAvJw"];
+                
+                VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
+                venmoTransaction.type = VenmoTransactionTypePay;
+                venmoTransaction.amount =  [payments objectForKey:uname];
+                venmoTransaction.note = @"via_divvy";
+                venmoTransaction.toUserHandle = uname;
+                
+                VenmoViewController *venmoViewController = [venmoClient viewControllerWithTransaction:
+                                                            venmoTransaction];
+                if (venmoViewController) {
+                    [self presentModalViewController:venmoViewController animated:YES];
+                }
+                
+            }
             
             
+            
+            //NSLog(@"payments = %@", payments);
+            
+            /*
             int i;
             
             for(i = 0; i < [payments count]; i++) {
@@ -297,6 +339,7 @@ MCSessionDelegate>
                 NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
                 NSLog(@"i = %d, responseData: %@", i, responseData);
             }
+             */
             
             UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"All payments received" message:@"Enter individual tip..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
