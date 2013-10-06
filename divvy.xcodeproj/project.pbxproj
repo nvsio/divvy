@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3103F82D180119BC004932F3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3103F82A180119BC004932F3 /* .gitignore */; };
-		3103F82E180119BC004932F3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3103F82B180119BC004932F3 /* README.md */; };
 		3103F82F180119BC004932F3 /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3103F82C180119BC004932F3 /* VenmoAppSwitch.framework */; };
 		3116A04E1801191C00308F34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A04D1801191C00308F34 /* Foundation.framework */; };
 		3116A0501801191C00308F34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A04F1801191C00308F34 /* CoreGraphics.framework */; };
 		3116A0521801191C00308F34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A0511801191C00308F34 /* UIKit.framework */; };
 		3116A0581801191C00308F34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3116A0561801191C00308F34 /* InfoPlist.strings */; };
 		3116A05A1801191C00308F34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3116A0591801191C00308F34 /* main.m */; };
-		3116A05E1801191C00308F34 /* nvsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3116A05D1801191C00308F34 /* nvsAppDelegate.m */; };
+		3116A05E1801191C00308F34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3116A05D1801191C00308F34 /* AppDelegate.m */; };
 		3116A0601801191C00308F34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3116A05F1801191C00308F34 /* Images.xcassets */; };
 		3116A0671801191C00308F34 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A0661801191C00308F34 /* XCTest.framework */; };
 		3116A0681801191C00308F34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A04D1801191C00308F34 /* Foundation.framework */; };
 		3116A0691801191C00308F34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A0511801191C00308F34 /* UIKit.framework */; };
 		3116A0711801191C00308F34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3116A06F1801191C00308F34 /* InfoPlist.strings */; };
 		3116A0731801191C00308F34 /* divvyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3116A0721801191C00308F34 /* divvyTests.m */; };
+		31AF1D5118014962001BC40A /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AF1D5018014962001BC40A /* MultipeerConnectivity.framework */; };
+		31AF1D5518014A9F001BC40A /* default-iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AF1D5418014A9F001BC40A /* default-iphone.storyboard */; };
+		31AF1D5818014B0B001BC40A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF1D5718014B0B001BC40A /* ViewController.m */; };
+		31AF1D5B18014C23001BC40A /* MultipeerConnectivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF1D5A18014C23001BC40A /* MultipeerConnectivityViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3103F82A180119BC004932F3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		3103F82B180119BC004932F3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3103F82C180119BC004932F3 /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VenmoAppSwitch.framework; sourceTree = "<group>"; };
 		3116A04A1801191C00308F34 /* divvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = divvy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3116A04D1801191C00308F34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,14 +46,20 @@
 		3116A0571801191C00308F34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3116A0591801191C00308F34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3116A05B1801191C00308F34 /* divvy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "divvy-Prefix.pch"; sourceTree = "<group>"; };
-		3116A05C1801191C00308F34 /* nvsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nvsAppDelegate.h; sourceTree = "<group>"; };
-		3116A05D1801191C00308F34 /* nvsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nvsAppDelegate.m; sourceTree = "<group>"; };
+		3116A05C1801191C00308F34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3116A05D1801191C00308F34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3116A05F1801191C00308F34 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3116A0651801191C00308F34 /* divvyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = divvyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3116A0661801191C00308F34 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3116A06E1801191C00308F34 /* divvyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "divvyTests-Info.plist"; sourceTree = "<group>"; };
 		3116A0701801191C00308F34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3116A0721801191C00308F34 /* divvyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = divvyTests.m; sourceTree = "<group>"; };
+		31AF1D5018014962001BC40A /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		31AF1D5418014A9F001BC40A /* default-iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "default-iphone.storyboard"; sourceTree = "<group>"; };
+		31AF1D5618014AEB001BC40A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		31AF1D5718014B0B001BC40A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		31AF1D5918014C23001BC40A /* MultipeerConnectivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerConnectivityViewController.h; sourceTree = "<group>"; };
+		31AF1D5A18014C23001BC40A /* MultipeerConnectivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerConnectivityViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31AF1D5118014962001BC40A /* MultipeerConnectivity.framework in Frameworks */,
 				3103F82F180119BC004932F3 /* VenmoAppSwitch.framework in Frameworks */,
 				3116A0501801191C00308F34 /* CoreGraphics.framework in Frameworks */,
 				3116A0521801191C00308F34 /* UIKit.framework in Frameworks */,
@@ -84,8 +91,6 @@
 		3103F829180119BC004932F3 /* app-switch-ios-framework-master */ = {
 			isa = PBXGroup;
 			children = (
-				3103F82A180119BC004932F3 /* .gitignore */,
-				3103F82B180119BC004932F3 /* README.md */,
 				3103F82C180119BC004932F3 /* VenmoAppSwitch.framework */,
 			);
 			path = "app-switch-ios-framework-master";
@@ -114,6 +119,7 @@
 		3116A04C1801191C00308F34 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				31AF1D5018014962001BC40A /* MultipeerConnectivity.framework */,
 				3116A04D1801191C00308F34 /* Foundation.framework */,
 				3116A04F1801191C00308F34 /* CoreGraphics.framework */,
 				3116A0511801191C00308F34 /* UIKit.framework */,
@@ -125,8 +131,13 @@
 		3116A0531801191C00308F34 /* divvy */ = {
 			isa = PBXGroup;
 			children = (
-				3116A05C1801191C00308F34 /* nvsAppDelegate.h */,
-				3116A05D1801191C00308F34 /* nvsAppDelegate.m */,
+				31AF1D5918014C23001BC40A /* MultipeerConnectivityViewController.h */,
+				31AF1D5A18014C23001BC40A /* MultipeerConnectivityViewController.m */,
+				31AF1D5718014B0B001BC40A /* ViewController.m */,
+				31AF1D5618014AEB001BC40A /* ViewController.h */,
+				31AF1D5418014A9F001BC40A /* default-iphone.storyboard */,
+				3116A05C1801191C00308F34 /* AppDelegate.h */,
+				3116A05D1801191C00308F34 /* AppDelegate.m */,
 				3116A05F1801191C00308F34 /* Images.xcassets */,
 				3116A0541801191C00308F34 /* Supporting Files */,
 			);
@@ -241,9 +252,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31AF1D5518014A9F001BC40A /* default-iphone.storyboard in Resources */,
 				3116A0581801191C00308F34 /* InfoPlist.strings in Resources */,
-				3103F82D180119BC004932F3 /* .gitignore in Resources */,
-				3103F82E180119BC004932F3 /* README.md in Resources */,
 				3116A0601801191C00308F34 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3116A05E1801191C00308F34 /* nvsAppDelegate.m in Sources */,
+				31AF1D5818014B0B001BC40A /* ViewController.m in Sources */,
+				31AF1D5B18014C23001BC40A /* MultipeerConnectivityViewController.m in Sources */,
+				3116A05E1801191C00308F34 /* AppDelegate.m in Sources */,
 				3116A05A1801191C00308F34 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

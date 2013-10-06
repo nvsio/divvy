@@ -1,5 +1,5 @@
 //
-//  nvsAppDelegate.h
+//  AppDelegate.h
 //  divvy
 //
 //  Created by Nikhil Srinivasan on 10/6/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface nvsAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
