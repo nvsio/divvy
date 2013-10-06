@@ -7,168 +7,160 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3103F82F180119BC004932F3 /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3103F82C180119BC004932F3 /* VenmoAppSwitch.framework */; };
-		3116A04E1801191C00308F34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A04D1801191C00308F34 /* Foundation.framework */; };
-		3116A0501801191C00308F34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A04F1801191C00308F34 /* CoreGraphics.framework */; };
-		3116A0521801191C00308F34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A0511801191C00308F34 /* UIKit.framework */; };
-		3116A0581801191C00308F34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3116A0561801191C00308F34 /* InfoPlist.strings */; };
-		3116A05A1801191C00308F34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3116A0591801191C00308F34 /* main.m */; };
-		3116A05E1801191C00308F34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3116A05D1801191C00308F34 /* AppDelegate.m */; };
-		3116A0601801191C00308F34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3116A05F1801191C00308F34 /* Images.xcassets */; };
-		3116A0671801191C00308F34 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A0661801191C00308F34 /* XCTest.framework */; };
-		3116A0681801191C00308F34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A04D1801191C00308F34 /* Foundation.framework */; };
-		3116A0691801191C00308F34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116A0511801191C00308F34 /* UIKit.framework */; };
-		3116A0711801191C00308F34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3116A06F1801191C00308F34 /* InfoPlist.strings */; };
-		3116A0731801191C00308F34 /* divvyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3116A0721801191C00308F34 /* divvyTests.m */; };
-		31AF1D5118014962001BC40A /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AF1D5018014962001BC40A /* MultipeerConnectivity.framework */; };
-		31AF1D5518014A9F001BC40A /* default-iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AF1D5418014A9F001BC40A /* default-iphone.storyboard */; };
-		31AF1D5818014B0B001BC40A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF1D5718014B0B001BC40A /* ViewController.m */; };
-		31AF1D5B18014C23001BC40A /* MultipeerConnectivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF1D5A18014C23001BC40A /* MultipeerConnectivityViewController.m */; };
+		3165E5C0180154E6003FC639 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165E5BF180154E6003FC639 /* Foundation.framework */; };
+		3165E5C2180154E6003FC639 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165E5C1180154E6003FC639 /* CoreGraphics.framework */; };
+		3165E5C4180154E6003FC639 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165E5C3180154E6003FC639 /* UIKit.framework */; };
+		3165E5CA180154E6003FC639 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3165E5C8180154E6003FC639 /* InfoPlist.strings */; };
+		3165E5CC180154E6003FC639 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165E5CB180154E6003FC639 /* main.m */; };
+		3165E5D0180154E6003FC639 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165E5CF180154E6003FC639 /* AppDelegate.m */; };
+		3165E5D8180154E6003FC639 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3165E5D7180154E6003FC639 /* Images.xcassets */; };
+		3165E5DF180154E6003FC639 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165E5DE180154E6003FC639 /* XCTest.framework */; };
+		3165E5E0180154E6003FC639 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165E5BF180154E6003FC639 /* Foundation.framework */; };
+		3165E5E1180154E6003FC639 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165E5C3180154E6003FC639 /* UIKit.framework */; };
+		3165E5E9180154E6003FC639 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3165E5E7180154E6003FC639 /* InfoPlist.strings */; };
+		3165E5EB180154E6003FC639 /* divvyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165E5EA180154E6003FC639 /* divvyTests.m */; };
+		3165E5F518015531003FC639 /* default-iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3165E5F418015531003FC639 /* default-iphone.storyboard */; };
+		3165E5FA18015597003FC639 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165E5F718015597003FC639 /* ViewController.m */; };
+		3165E5FB18015597003FC639 /* MultipeerConnectivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3165E5F918015597003FC639 /* MultipeerConnectivityViewController.m */; };
+		3165E5FD180155D2003FC639 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165E5FC180155D2003FC639 /* MultipeerConnectivity.framework */; };
+		3165E5FF18015896003FC639 /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165E5FE18015896003FC639 /* VenmoAppSwitch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3116A06A1801191C00308F34 /* PBXContainerItemProxy */ = {
+		3165E5E2180154E6003FC639 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3116A0421801191C00308F34 /* Project object */;
+			containerPortal = 3165E5B4180154E6003FC639 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3116A0491801191C00308F34;
+			remoteGlobalIDString = 3165E5BB180154E6003FC639;
 			remoteInfo = divvy;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3103F82C180119BC004932F3 /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VenmoAppSwitch.framework; sourceTree = "<group>"; };
-		3116A04A1801191C00308F34 /* divvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = divvy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3116A04D1801191C00308F34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3116A04F1801191C00308F34 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3116A0511801191C00308F34 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3116A0551801191C00308F34 /* divvy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "divvy-Info.plist"; sourceTree = "<group>"; };
-		3116A0571801191C00308F34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3116A0591801191C00308F34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3116A05B1801191C00308F34 /* divvy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "divvy-Prefix.pch"; sourceTree = "<group>"; };
-		3116A05C1801191C00308F34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		3116A05D1801191C00308F34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3116A05F1801191C00308F34 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3116A0651801191C00308F34 /* divvyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = divvyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3116A0661801191C00308F34 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3116A06E1801191C00308F34 /* divvyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "divvyTests-Info.plist"; sourceTree = "<group>"; };
-		3116A0701801191C00308F34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3116A0721801191C00308F34 /* divvyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = divvyTests.m; sourceTree = "<group>"; };
-		31AF1D5018014962001BC40A /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
-		31AF1D5418014A9F001BC40A /* default-iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "default-iphone.storyboard"; sourceTree = "<group>"; };
-		31AF1D5618014AEB001BC40A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		31AF1D5718014B0B001BC40A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		31AF1D5918014C23001BC40A /* MultipeerConnectivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerConnectivityViewController.h; sourceTree = "<group>"; };
-		31AF1D5A18014C23001BC40A /* MultipeerConnectivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerConnectivityViewController.m; sourceTree = "<group>"; };
+		3165E5BC180154E6003FC639 /* divvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = divvy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3165E5BF180154E6003FC639 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3165E5C1180154E6003FC639 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3165E5C3180154E6003FC639 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3165E5C7180154E6003FC639 /* divvy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "divvy-Info.plist"; sourceTree = "<group>"; };
+		3165E5C9180154E6003FC639 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3165E5CB180154E6003FC639 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3165E5CD180154E6003FC639 /* divvy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "divvy-Prefix.pch"; sourceTree = "<group>"; };
+		3165E5CE180154E6003FC639 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3165E5CF180154E6003FC639 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3165E5D7180154E6003FC639 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3165E5DD180154E6003FC639 /* divvyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = divvyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3165E5DE180154E6003FC639 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3165E5E6180154E6003FC639 /* divvyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "divvyTests-Info.plist"; sourceTree = "<group>"; };
+		3165E5E8180154E6003FC639 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3165E5EA180154E6003FC639 /* divvyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = divvyTests.m; sourceTree = "<group>"; };
+		3165E5F418015531003FC639 /* default-iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "default-iphone.storyboard"; sourceTree = "<group>"; };
+		3165E5F618015597003FC639 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3165E5F718015597003FC639 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3165E5F818015597003FC639 /* MultipeerConnectivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerConnectivityViewController.h; sourceTree = "<group>"; };
+		3165E5F918015597003FC639 /* MultipeerConnectivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerConnectivityViewController.m; sourceTree = "<group>"; };
+		3165E5FC180155D2003FC639 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		3165E5FE18015896003FC639 /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VenmoAppSwitch.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3116A0471801191C00308F34 /* Frameworks */ = {
+		3165E5B9180154E6003FC639 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31AF1D5118014962001BC40A /* MultipeerConnectivity.framework in Frameworks */,
-				3103F82F180119BC004932F3 /* VenmoAppSwitch.framework in Frameworks */,
-				3116A0501801191C00308F34 /* CoreGraphics.framework in Frameworks */,
-				3116A0521801191C00308F34 /* UIKit.framework in Frameworks */,
-				3116A04E1801191C00308F34 /* Foundation.framework in Frameworks */,
+				3165E5FD180155D2003FC639 /* MultipeerConnectivity.framework in Frameworks */,
+				3165E5FF18015896003FC639 /* VenmoAppSwitch.framework in Frameworks */,
+				3165E5C2180154E6003FC639 /* CoreGraphics.framework in Frameworks */,
+				3165E5C4180154E6003FC639 /* UIKit.framework in Frameworks */,
+				3165E5C0180154E6003FC639 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3116A0621801191C00308F34 /* Frameworks */ = {
+		3165E5DA180154E6003FC639 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3116A0671801191C00308F34 /* XCTest.framework in Frameworks */,
-				3116A0691801191C00308F34 /* UIKit.framework in Frameworks */,
-				3116A0681801191C00308F34 /* Foundation.framework in Frameworks */,
+				3165E5DF180154E6003FC639 /* XCTest.framework in Frameworks */,
+				3165E5E1180154E6003FC639 /* UIKit.framework in Frameworks */,
+				3165E5E0180154E6003FC639 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3103F829180119BC004932F3 /* app-switch-ios-framework-master */ = {
+		3165E5B3180154E6003FC639 = {
 			isa = PBXGroup;
 			children = (
-				3103F82C180119BC004932F3 /* VenmoAppSwitch.framework */,
-			);
-			path = "app-switch-ios-framework-master";
-			sourceTree = "<group>";
-		};
-		3116A0411801191C00308F34 = {
-			isa = PBXGroup;
-			children = (
-				3103F829180119BC004932F3 /* app-switch-ios-framework-master */,
-				3116A0531801191C00308F34 /* divvy */,
-				3116A06C1801191C00308F34 /* divvyTests */,
-				3116A04C1801191C00308F34 /* Frameworks */,
-				3116A04B1801191C00308F34 /* Products */,
+				3165E5C5180154E6003FC639 /* divvy */,
+				3165E5E4180154E6003FC639 /* divvyTests */,
+				3165E5BE180154E6003FC639 /* Frameworks */,
+				3165E5BD180154E6003FC639 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3116A04B1801191C00308F34 /* Products */ = {
+		3165E5BD180154E6003FC639 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3116A04A1801191C00308F34 /* divvy.app */,
-				3116A0651801191C00308F34 /* divvyTests.xctest */,
+				3165E5BC180154E6003FC639 /* divvy.app */,
+				3165E5DD180154E6003FC639 /* divvyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3116A04C1801191C00308F34 /* Frameworks */ = {
+		3165E5BE180154E6003FC639 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				31AF1D5018014962001BC40A /* MultipeerConnectivity.framework */,
-				3116A04D1801191C00308F34 /* Foundation.framework */,
-				3116A04F1801191C00308F34 /* CoreGraphics.framework */,
-				3116A0511801191C00308F34 /* UIKit.framework */,
-				3116A0661801191C00308F34 /* XCTest.framework */,
+				3165E5FE18015896003FC639 /* VenmoAppSwitch.framework */,
+				3165E5FC180155D2003FC639 /* MultipeerConnectivity.framework */,
+				3165E5BF180154E6003FC639 /* Foundation.framework */,
+				3165E5C1180154E6003FC639 /* CoreGraphics.framework */,
+				3165E5C3180154E6003FC639 /* UIKit.framework */,
+				3165E5DE180154E6003FC639 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3116A0531801191C00308F34 /* divvy */ = {
+		3165E5C5180154E6003FC639 /* divvy */ = {
 			isa = PBXGroup;
 			children = (
-				31AF1D5918014C23001BC40A /* MultipeerConnectivityViewController.h */,
-				31AF1D5A18014C23001BC40A /* MultipeerConnectivityViewController.m */,
-				31AF1D5718014B0B001BC40A /* ViewController.m */,
-				31AF1D5618014AEB001BC40A /* ViewController.h */,
-				31AF1D5418014A9F001BC40A /* default-iphone.storyboard */,
-				3116A05C1801191C00308F34 /* AppDelegate.h */,
-				3116A05D1801191C00308F34 /* AppDelegate.m */,
-				3116A05F1801191C00308F34 /* Images.xcassets */,
-				3116A0541801191C00308F34 /* Supporting Files */,
+				3165E5CE180154E6003FC639 /* AppDelegate.h */,
+				3165E5CF180154E6003FC639 /* AppDelegate.m */,
+				3165E5F618015597003FC639 /* ViewController.h */,
+				3165E5F718015597003FC639 /* ViewController.m */,
+				3165E5F818015597003FC639 /* MultipeerConnectivityViewController.h */,
+				3165E5F918015597003FC639 /* MultipeerConnectivityViewController.m */,
+				3165E5F418015531003FC639 /* default-iphone.storyboard */,
+				3165E5D7180154E6003FC639 /* Images.xcassets */,
+				3165E5C6180154E6003FC639 /* Supporting Files */,
 			);
 			path = divvy;
 			sourceTree = "<group>";
 		};
-		3116A0541801191C00308F34 /* Supporting Files */ = {
+		3165E5C6180154E6003FC639 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3116A0551801191C00308F34 /* divvy-Info.plist */,
-				3116A0561801191C00308F34 /* InfoPlist.strings */,
-				3116A0591801191C00308F34 /* main.m */,
-				3116A05B1801191C00308F34 /* divvy-Prefix.pch */,
+				3165E5C7180154E6003FC639 /* divvy-Info.plist */,
+				3165E5C8180154E6003FC639 /* InfoPlist.strings */,
+				3165E5CB180154E6003FC639 /* main.m */,
+				3165E5CD180154E6003FC639 /* divvy-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3116A06C1801191C00308F34 /* divvyTests */ = {
+		3165E5E4180154E6003FC639 /* divvyTests */ = {
 			isa = PBXGroup;
 			children = (
-				3116A0721801191C00308F34 /* divvyTests.m */,
-				3116A06D1801191C00308F34 /* Supporting Files */,
+				3165E5EA180154E6003FC639 /* divvyTests.m */,
+				3165E5E5180154E6003FC639 /* Supporting Files */,
 			);
 			path = divvyTests;
 			sourceTree = "<group>";
 		};
-		3116A06D1801191C00308F34 /* Supporting Files */ = {
+		3165E5E5180154E6003FC639 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3116A06E1801191C00308F34 /* divvyTests-Info.plist */,
-				3116A06F1801191C00308F34 /* InfoPlist.strings */,
+				3165E5E6180154E6003FC639 /* divvyTests-Info.plist */,
+				3165E5E7180154E6003FC639 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -176,13 +168,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3116A0491801191C00308F34 /* divvy */ = {
+		3165E5BB180154E6003FC639 /* divvy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3116A0761801191C00308F34 /* Build configuration list for PBXNativeTarget "divvy" */;
+			buildConfigurationList = 3165E5EE180154E6003FC639 /* Build configuration list for PBXNativeTarget "divvy" */;
 			buildPhases = (
-				3116A0461801191C00308F34 /* Sources */,
-				3116A0471801191C00308F34 /* Frameworks */,
-				3116A0481801191C00308F34 /* Resources */,
+				3165E5B8180154E6003FC639 /* Sources */,
+				3165E5B9180154E6003FC639 /* Frameworks */,
+				3165E5BA180154E6003FC639 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -190,127 +182,124 @@
 			);
 			name = divvy;
 			productName = divvy;
-			productReference = 3116A04A1801191C00308F34 /* divvy.app */;
+			productReference = 3165E5BC180154E6003FC639 /* divvy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3116A0641801191C00308F34 /* divvyTests */ = {
+		3165E5DC180154E6003FC639 /* divvyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3116A0791801191C00308F34 /* Build configuration list for PBXNativeTarget "divvyTests" */;
+			buildConfigurationList = 3165E5F1180154E6003FC639 /* Build configuration list for PBXNativeTarget "divvyTests" */;
 			buildPhases = (
-				3116A0611801191C00308F34 /* Sources */,
-				3116A0621801191C00308F34 /* Frameworks */,
-				3116A0631801191C00308F34 /* Resources */,
+				3165E5D9180154E6003FC639 /* Sources */,
+				3165E5DA180154E6003FC639 /* Frameworks */,
+				3165E5DB180154E6003FC639 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3116A06B1801191C00308F34 /* PBXTargetDependency */,
+				3165E5E3180154E6003FC639 /* PBXTargetDependency */,
 			);
 			name = divvyTests;
 			productName = divvyTests;
-			productReference = 3116A0651801191C00308F34 /* divvyTests.xctest */;
+			productReference = 3165E5DD180154E6003FC639 /* divvyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3116A0421801191C00308F34 /* Project object */ = {
+		3165E5B4180154E6003FC639 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = nvs;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Nikhil Srinivasan";
 				TargetAttributes = {
-					3116A0491801191C00308F34 = {
-						DevelopmentTeam = NF78B4JD3Q;
-					};
-					3116A0641801191C00308F34 = {
-						TestTargetID = 3116A0491801191C00308F34;
+					3165E5DC180154E6003FC639 = {
+						TestTargetID = 3165E5BB180154E6003FC639;
 					};
 				};
 			};
-			buildConfigurationList = 3116A0451801191C00308F34 /* Build configuration list for PBXProject "divvy" */;
+			buildConfigurationList = 3165E5B7180154E6003FC639 /* Build configuration list for PBXProject "divvy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 3116A0411801191C00308F34;
-			productRefGroup = 3116A04B1801191C00308F34 /* Products */;
+			mainGroup = 3165E5B3180154E6003FC639;
+			productRefGroup = 3165E5BD180154E6003FC639 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3116A0491801191C00308F34 /* divvy */,
-				3116A0641801191C00308F34 /* divvyTests */,
+				3165E5BB180154E6003FC639 /* divvy */,
+				3165E5DC180154E6003FC639 /* divvyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3116A0481801191C00308F34 /* Resources */ = {
+		3165E5BA180154E6003FC639 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31AF1D5518014A9F001BC40A /* default-iphone.storyboard in Resources */,
-				3116A0581801191C00308F34 /* InfoPlist.strings in Resources */,
-				3116A0601801191C00308F34 /* Images.xcassets in Resources */,
+				3165E5F518015531003FC639 /* default-iphone.storyboard in Resources */,
+				3165E5D8180154E6003FC639 /* Images.xcassets in Resources */,
+				3165E5CA180154E6003FC639 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3116A0631801191C00308F34 /* Resources */ = {
+		3165E5DB180154E6003FC639 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3116A0711801191C00308F34 /* InfoPlist.strings in Resources */,
+				3165E5E9180154E6003FC639 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3116A0461801191C00308F34 /* Sources */ = {
+		3165E5B8180154E6003FC639 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31AF1D5818014B0B001BC40A /* ViewController.m in Sources */,
-				31AF1D5B18014C23001BC40A /* MultipeerConnectivityViewController.m in Sources */,
-				3116A05E1801191C00308F34 /* AppDelegate.m in Sources */,
-				3116A05A1801191C00308F34 /* main.m in Sources */,
+				3165E5FA18015597003FC639 /* ViewController.m in Sources */,
+				3165E5FB18015597003FC639 /* MultipeerConnectivityViewController.m in Sources */,
+				3165E5D0180154E6003FC639 /* AppDelegate.m in Sources */,
+				3165E5CC180154E6003FC639 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3116A0611801191C00308F34 /* Sources */ = {
+		3165E5D9180154E6003FC639 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3116A0731801191C00308F34 /* divvyTests.m in Sources */,
+				3165E5EB180154E6003FC639 /* divvyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3116A06B1801191C00308F34 /* PBXTargetDependency */ = {
+		3165E5E3180154E6003FC639 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3116A0491801191C00308F34 /* divvy */;
-			targetProxy = 3116A06A1801191C00308F34 /* PBXContainerItemProxy */;
+			target = 3165E5BB180154E6003FC639 /* divvy */;
+			targetProxy = 3165E5E2180154E6003FC639 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3116A0561801191C00308F34 /* InfoPlist.strings */ = {
+		3165E5C8180154E6003FC639 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3116A0571801191C00308F34 /* en */,
+				3165E5C9180154E6003FC639 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		3116A06F1801191C00308F34 /* InfoPlist.strings */ = {
+		3165E5E7180154E6003FC639 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3116A0701801191C00308F34 /* en */,
+				3165E5E8180154E6003FC639 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -318,7 +307,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3116A0741801191C00308F34 /* Debug */ = {
+		3165E5EC180154E6003FC639 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -357,7 +346,7 @@
 			};
 			name = Debug;
 		};
-		3116A0751801191C00308F34 /* Release */ = {
+		3165E5ED180154E6003FC639 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -390,47 +379,41 @@
 			};
 			name = Release;
 		};
-		3116A0771801191C00308F34 /* Debug */ = {
+		3165E5EF180154E6003FC639 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/nikhil/Dropbox/projects/divvy-iOS/app-switch-ios-framework-master",
+					"/Users/nikhil/Dropbox/projects/divvy-iOS/divvy",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "divvy/divvy-Prefix.pch";
 				INFOPLIST_FILE = "divvy/divvy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		3116A0781801191C00308F34 /* Release */ = {
+		3165E5F0180154E6003FC639 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/nikhil/Dropbox/projects/divvy-iOS/app-switch-ios-framework-master",
+					"/Users/nikhil/Dropbox/projects/divvy-iOS/divvy",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "divvy/divvy-Prefix.pch";
 				INFOPLIST_FILE = "divvy/divvy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		3116A07A1801191C00308F34 /* Debug */ = {
+		3165E5F2180154E6003FC639 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -453,7 +436,7 @@
 			};
 			name = Debug;
 		};
-		3116A07B1801191C00308F34 /* Release */ = {
+		3165E5F3180154E6003FC639 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -475,34 +458,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3116A0451801191C00308F34 /* Build configuration list for PBXProject "divvy" */ = {
+		3165E5B7180154E6003FC639 /* Build configuration list for PBXProject "divvy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3116A0741801191C00308F34 /* Debug */,
-				3116A0751801191C00308F34 /* Release */,
+				3165E5EC180154E6003FC639 /* Debug */,
+				3165E5ED180154E6003FC639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3116A0761801191C00308F34 /* Build configuration list for PBXNativeTarget "divvy" */ = {
+		3165E5EE180154E6003FC639 /* Build configuration list for PBXNativeTarget "divvy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3116A0771801191C00308F34 /* Debug */,
-				3116A0781801191C00308F34 /* Release */,
+				3165E5EF180154E6003FC639 /* Debug */,
+				3165E5F0180154E6003FC639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		3116A0791801191C00308F34 /* Build configuration list for PBXNativeTarget "divvyTests" */ = {
+		3165E5F1180154E6003FC639 /* Build configuration list for PBXNativeTarget "divvyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3116A07A1801191C00308F34 /* Debug */,
-				3116A07B1801191C00308F34 /* Release */,
+				3165E5F2180154E6003FC639 /* Debug */,
+				3165E5F3180154E6003FC639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3116A0421801191C00308F34 /* Project object */;
+	rootObject = 3165E5B4180154E6003FC639 /* Project object */;
 }

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3116A0491801191C00308F34"
+               BlueprintIdentifier = "3165E5BB180154E6003FC639"
                BuildableName = "divvy.app"
                BlueprintName = "divvy"
                ReferencedContainer = "container:divvy.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3116A0641801191C00308F34"
+               BlueprintIdentifier = "3165E5DC180154E6003FC639"
                BuildableName = "divvyTests.xctest"
                BlueprintName = "divvyTests"
                ReferencedContainer = "container:divvy.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3116A0491801191C00308F34"
+            BlueprintIdentifier = "3165E5BB180154E6003FC639"
             BuildableName = "divvy.app"
             BlueprintName = "divvy"
             ReferencedContainer = "container:divvy.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3116A0491801191C00308F34"
+            BlueprintIdentifier = "3165E5BB180154E6003FC639"
             BuildableName = "divvy.app"
             BlueprintName = "divvy"
             ReferencedContainer = "container:divvy.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3116A0491801191C00308F34"
+            BlueprintIdentifier = "3165E5BB180154E6003FC639"
             BuildableName = "divvy.app"
             BlueprintName = "divvy"
             ReferencedContainer = "container:divvy.xcodeproj">
