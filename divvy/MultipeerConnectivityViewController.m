@@ -302,7 +302,7 @@ MCSessionDelegate>
                 NSLog(@"now payments is %@", payments);
                 
                 NSString *uname = [[[_session connectedPeers]objectAtIndex:i]displayName];
-                uname = [uname stringByAppendingString:@"::"];
+                //uname = [uname stringByAppendingString:@"::"];
                 
                 VenmoClient *venmoClient = [VenmoClient clientWithAppId:@"1432" secret:@"ZY3yF5PJzXp4bDLXhAWAeMJF7UneAvJw"];
                 
