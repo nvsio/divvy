@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>46B60C92-BBC5-479C-9AAF-E04071AB5FFC</string>
+	<string>D24CE084-2FA0-4298-8765-B3FDCD894016</string>
 	<key>IDESourceControlProjectName</key>
 	<string>divvy</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/nikhilsrinivasan/divvy-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>divvy/divvy.xcodeproj/project.xcworkspace</string>
+	<string>divvy.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0FAAE9FF-4140-4CE4-BE59-1E74416EDD40</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/nikhilsrinivasan/divvy-iOS.git</string>

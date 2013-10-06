@@ -3,7 +3,7 @@
 //  divvy
 //
 //  Created by Neel Mouleeswaran on 10/5/13.
-//  Copyright (c) 2013 Nikhil Srinivasan. All rights reserved.
+//  Copyright (c) 2013 Nikhil Srinivasan and Neel Mouleeswaran. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

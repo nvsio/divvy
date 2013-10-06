@@ -3,12 +3,11 @@
 //  divvy
 //
 //  Created by Andrew Frederick and adapted by Neel Mouleeswaran on 8/05/13.
-//  Copyright (c) 2013 Nikhil Srinivasan. All rights reserved.
+//  Copyright (c) 2013 Nikhil Srinivasan and Neel Mouleeswaran. All rights reserved.
 //
 
 #import "MultipeerConnectivityViewController.h"
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
-#import <VenmoAppSwitch/Venmo.h>
 
 
 
@@ -67,7 +66,6 @@ MCSessionDelegate>
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alertView show];
     
- 
     UIAlertView *alertView2 = [[UIAlertView alloc] initWithTitle:@"Access token" message:@"Enter your AT:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     alertView2.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alertView2 show];
@@ -112,17 +110,19 @@ MCSessionDelegate>
 - (IBAction)sendMessageButtonPressed:(id)sender {
     
     
-    NSString *message = _messageTextField.text;
-   // NSString *input = _messageTextField.text;
+    
+    NSString *input = _messageTextField.text;
     
     //https://api.venmo.com/payments&access_token=TOKEN&user_id=NAME&note=N/A&amount=MESSAGE
     
-    /*NSString *message = [@"https://api.venmo.com/payments?access_token=" stringByAppendingString:@"TOKEN"];
+    // NSString *message = _messageTextField.text;
+    
+    NSString *message = [@"https://api.venmo.com/payments?access_token=" stringByAppendingString:@"6adrUbMfQNqq2LQb5dc5csNpHF23EyZF"];
     message = [message stringByAppendingString:@"&user_id="];
     message = [message stringByAppendingString:name];
-    message = [message stringByAppendingString:@"&note=via-divvy&amount="];
+    message = [message stringByAppendingString:@"&note=via-divvy&amount=-"];
     message = [message stringByAppendingString:input];
-     */
+    
     
     
     
@@ -223,8 +223,6 @@ MCSessionDelegate>
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID {
     
-    
-    
     NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
     
     num_peers = [[_session connectedPeers]count];
@@ -236,15 +234,8 @@ MCSessionDelegate>
                                                                             format:&format
                                                                              error:NULL];
     NSString *message = receivedData[kMessageKey];
-    
-    NSString *pmt =[@"" stringByAppendingString:[peerID displayName]];
-    
-    pmt = [pmt stringByAppendingString:@"::"];
-    pmt = [pmt stringByAppendingString:message];
-    
-    [payments setObject:message forKey:[peerID displayName]];
-    
-   NSLog(@"payments = %@", payments);
+    [payments addObject:message];
+    NSLog(@"payments = %@", payments);
     
     
     if ([message length]) {
@@ -274,7 +265,7 @@ MCSessionDelegate>
             
             
             else if(!isPaying && isTip) {
-                UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:[@"Tip is: " stringByAppendingString:message]    message:@"You can dismiss this window now" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:[@"Tip is: " stringByAppendingString:[message substringFromIndex:[message length] - 4]]    message:@"You can dismiss this window now" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [messageAlert show];
                 
                 isTip = FALSE;
