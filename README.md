@@ -11,3 +11,5 @@ Based on the new [iOS Multipeer Connectivity Framework](https://developer.apple.
 [Venmo App Switch SDK for iOS](https://github.com/venmo/app-switch-ios-framework)  
 [ChatHeads](https://github.com/brutella/chatheads)  
 
+**License**  
+Copyright (c) 2013 [Nikhil Srinivasan](https://github.com/nikhilsrinivasan) and [Neel Mouleeswaran](https://github.com/neelmouleeswaran).
