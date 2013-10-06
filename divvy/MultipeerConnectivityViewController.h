@@ -16,7 +16,8 @@
     BOOL isTip;
     NSString *name;
     NSString *access_token;
-    NSMutableArray *payments;
+    NSMutableDictionary *payments;
+    int num_peers;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

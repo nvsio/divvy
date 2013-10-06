@@ -58,7 +58,8 @@ MCSessionDelegate>
     [tableView setHidden:YES];
     [waiting_label setHidden:YES];
     isTip = FALSE;
-    payments = [[NSMutableArray alloc]init];
+    payments = [[NSMutableDictionary alloc]init];
+    num_peers = 0;
     
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Name" message:@"Enter your name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
@@ -224,7 +225,7 @@ MCSessionDelegate>
     
     NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
     
-    
+    num_peers = [[_session connectedPeers]count];
     
     
     NSPropertyListFormat format;
@@ -279,8 +280,7 @@ MCSessionDelegate>
         [tableView setHidden:NO];
         
         submissions_recieved++;
-        int num_peers = [[_session connectedPeers]count];
-        NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
+       // int num_peers = [[_session connectedPeers]count];
         
         if(submissions_recieved >= num_peers) {
             // all submissions received
@@ -291,26 +291,34 @@ MCSessionDelegate>
             
             int i;
             
-            for(i = 0; i < [payments count]; i++) {
-                NSLog(@"request = %@", [payments objectAtIndex:i]);
-                // NSURL *url = [NSURL URLWithString:[[payments objectAtIndex:i]stringByReplacingOccurrencesOfString:@"TOKEN" withString:[peerID displayName]]];
-                NSURL *url = [NSURL URLWithString:[payments objectAtIndex:i]];
-                NSLog(@"\nRUNNING: %@\n", url);
+            
+          //  VenmoClient *venmoClient = [VenmoClient clientWithAppId:@"1432" secret:@"ZY3yF5PJzXp4bDLXhAWAeMJF7UneAvJw"];
+            
+            /*
+            for(i = 0; i < num_peers; i++) {
                 
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.venmo.com/payments"]];
+                NSLog(@"now payments is %@", payments);
                 
-                [request setHTTPMethod:@"POST"];
+                NSString *uname = [[[_session connectedPeers]objectAtIndex:i]displayName];
+                //uname = [uname stringByAppendingString:@"::"];
                 
                 url = [NSURL URLWithString:[[url absoluteString]substringFromIndex:30]];
                 
-                NSLog(@"Substring = %@", url);
+                VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
+                venmoTransaction.type = VenmoTransactionTypePay;
+                venmoTransaction.amount =  [payments objectForKey:uname];
+                venmoTransaction.note = @"via_divvy";
+                venmoTransaction.toUserHandle = uname;
                 
-                [request setHTTPBody:[NSData dataWithContentsOfURL:url]];
-                NSURLResponse *response;
-                NSError *err;
-                NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-                NSLog(@"i = %d, responseData: %@", i, responseData);
+                VenmoViewController *venmoViewController = [venmoClient viewControllerWithTransaction:
+                                                            venmoTransaction];
+                if (venmoViewController) {
+                    [self presentModalViewController:venmoViewController animated:YES];
+                }
+                
             }
+            */
+            
             
             UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"All payments received" message:@"Enter individual tip..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
