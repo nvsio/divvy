@@ -114,9 +114,9 @@ MCSessionDelegate>
     
     //https://api.venmo.com/payments&access_token=TOKEN&user_id=NAME&note=N/A&amount=MESSAGE
     
-    NSString *message = [@"https://api.venmo.com/payments?access_token=" stringByAppendingString:access_token];
+    NSString *message = [@"https://api.venmo.com/payments?access_token=" stringByAppendingString:@"TOKEN"];
     message = [message stringByAppendingString:@"&user_id="];
-    message = [message stringByAppendingString:@"NAME"];
+    message = [message stringByAppendingString:name];
     message = [message stringByAppendingString:@"&note=via-divvy&amount="];
     message = [message stringByAppendingString:input];
     
@@ -219,52 +219,6 @@ MCSessionDelegate>
     
     NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
     
-    if(isPaying) {
-        
-        [tableView setHidden:NO];
-        
-        submissions_recieved++;
-        int num_peers = [[_session connectedPeers]count];
-        
-        if(submissions_recieved >= num_peers) {
-            // all submissions received
-            NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
-            
-            NSLog(@"payments = %@", payments);
-            
-            
-            int i;
-            
-            for(i = 0; i < [payments count]; i++) {
-                NSLog(@"request = %@", [payments objectAtIndex:i]);
-                NSURL *url = [NSURL URLWithString:[[payments objectAtIndex:i]stringByReplacingOccurrencesOfString:@"NAME" withString:[peerID displayName]]];
-                NSLog(@"\nRUNNING: %@\n", url);
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-                [request setHTTPMethod:@"POST"];
-                [request setHTTPBody:data];
-                NSURLResponse *response;
-                NSError *err;
-                NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-                NSLog(@"i = %d, responseData: %@", i, responseData);
-            }
-            
-            UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"All payments received" message:@"Enter individual tip..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            
-            [messageAlert show];
-            
-            
-            
-            [tableView setHidden:YES];
-            [waiting_label setHidden:YES];
-            _messageTextField.hidden=FALSE;
-            _sendMessageButton.hidden=FALSE;
-            isTip = TRUE;
-            
-        }
-        
-        submissions_recieved = 0;
-        
-    }
     
     
     
@@ -313,6 +267,55 @@ MCSessionDelegate>
             
         });
     }
+    
+    
+    if(isPaying) {
+        
+        [tableView setHidden:NO];
+        
+        submissions_recieved++;
+        int num_peers = [[_session connectedPeers]count];
+        
+        if(submissions_recieved >= num_peers) {
+            // all submissions received
+            NSLog(@"submissions received = %d\nconnected peers = %lu", submissions_recieved, (unsigned long)[[_session connectedPeers]count]);
+            
+            NSLog(@"payments = %@", payments);
+            
+            
+            int i;
+            
+            for(i = 0; i < [payments count]; i++) {
+                NSLog(@"request = %@", [payments objectAtIndex:i]);
+                NSURL *url = [NSURL URLWithString:[[payments objectAtIndex:i]stringByReplacingOccurrencesOfString:@"TOKEN" withString:[peerID displayName]]];
+                NSLog(@"\nRUNNING: %@\n", url);
+                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+                [request setHTTPMethod:@"POST"];
+                [request setHTTPBody:data];
+                NSURLResponse *response;
+                NSError *err;
+                NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+                NSLog(@"i = %d, responseData: %@", i, responseData);
+            }
+            
+            UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"All payments received" message:@"Enter individual tip..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            [messageAlert show];
+            
+            
+            
+            [tableView setHidden:YES];
+            [waiting_label setHidden:YES];
+            _messageTextField.hidden=FALSE;
+            _sendMessageButton.hidden=FALSE;
+            isTip = TRUE;
+            
+        }
+        
+        submissions_recieved = 0;
+        
+    }
+    
 }
 
 // Required MCSessionDelegate protocol methods but are unused in this application.

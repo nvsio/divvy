@@ -1,9 +1,9 @@
 //
 //  MultipeerConnectivityViewController.h
-//  divvy
+//  iOS7Sampler
 //
-//  Created by Andrew Frederick and adapted by Neel Mouleeswaran on 8/05/13.
-//  Copyright (c) 2013 Nikhil Srinivasan. All rights reserved.
+//  Created by Andrew Frederick on 9/27/13.
+//  Copyright (c) 2013 Shuichi Tsutsumi. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
