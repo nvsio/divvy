@@ -12,7 +12,7 @@ Based on the new [iOS Multipeer Connectivity Framework](https://developer.apple.
 [ChatHeads](https://github.com/brutella/chatheads)  
 
 **HackMIT 2013**  
-We developed the proof of concept of this application under 24 hours as our submission to [hackMIT](http://www.hackmit.org) 2013. The source code of our submission can be found in the [hackMIT branch](https://github.com/nikhilsrinivasan/divvy-iOS/tree/hackMIT-2013).
+We developed a proof of concept of this application under 24 hours as our submission to [hackMIT](http://www.hackmit.org) 2013. The source code of our submission can be found in the [hackMIT branch](https://github.com/nikhilsrinivasan/divvy-iOS/tree/hackMIT-2013).
 
 **License**  
 Copyright (c) 2013 [Nikhil Srinivasan](https://github.com/nikhilsrinivasan) and [Neel Mouleeswaran](https://github.com/neelmouleeswaran).
