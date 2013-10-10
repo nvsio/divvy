@@ -1,4 +1,4 @@
-![divvy](http://f.cl.ly/items/3Q3i262y230F0X0I0i25/divvy_gh-banner.png)  
+![divvy](http://f.cl.ly/items/0D2e1K1G0G0f1T0A0a42/github-divvy-banner_hackmit.png)  
 
 **What**  
 **[divvy](https://github.com/nikhilsrinivasan/divvy-iOS)** makes splitting tabs simple and effortless. Sharing expenses have never been easier - simply login with your Venmo credentials and fire up the app when it's time to settle the tab.
